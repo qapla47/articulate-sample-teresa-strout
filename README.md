@@ -1,0 +1,1 @@
+"# articulate-sample-teresa-strout" 
