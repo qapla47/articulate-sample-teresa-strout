@@ -1,0 +1,23 @@
+[{
+  "question": "What is this a picture of?",
+  "image": "coffee",
+  "altText": "steaming coffee",
+  "choices": ["Cookies and Coffee", "Donuts and Cider"],
+  "answer": "Cookies and Coffee",
+  "response": "I just love cookies and a warm cup of coffee!"
+},
+{
+  "question": "What is this a picture of?",
+  "image": "kittensAndPuppies",
+  "altText": "kitten and puppy",
+  "choices": ["Kitten and Puppy", "Pointy eared fluff ball and floppy eared fuzz bucket"],
+  "answer": "Kitten and Puppy",
+  "response": "Aren't they just so cute!"
+},{
+  "question": "Which is on the right?",
+  "image": "kittensAndPuppies",
+  "altText": "kitten and puppy",
+  "choices": ["Kitten", "Puppy"],
+  "answer": "Puppy",
+  "response": "Cats Rule!"
+}]
