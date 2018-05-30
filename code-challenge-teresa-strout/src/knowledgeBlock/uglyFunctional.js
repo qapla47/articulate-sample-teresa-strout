@@ -20,12 +20,14 @@ export default class UglyFunctional extends Component {
 
   }
 
-  imageURL = name => {
+  imageURL = () => {
     switch (data[this.state.questionID].image) {
       case 'coffee':
         return coffee;
+        break;
       case 'kittensAndPuppies':
         return kittensAndPuppies;
+        break;
       case "tRex":
         return tRex;
         break;
