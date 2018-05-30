@@ -3,7 +3,8 @@ import React, {Component} from "react";
 import data from "./data.json";
 
 import kittensAndPuppies from './images/kittensAndPuppies.jpg';
-import coffee from './images/d229V-nstxA6tZdi.gif'
+import coffee from './images/d229V-nstxA6tZdi.gif';
+import tRex from './images/T-Rex.jpg';
 
 export default class UglyFunctional extends Component {
   constructor(props) {
@@ -25,6 +26,9 @@ export default class UglyFunctional extends Component {
         return coffee;
       case 'kittensAndPuppies':
         return kittensAndPuppies;
+      case "tRex":
+        return tRex;
+        break;
       default:
         return coffee;
     }
@@ -63,54 +67,74 @@ export default class UglyFunctional extends Component {
     if(this.state.questionID !== data.length-1) {
       this.setState({
         questionID: this.state.questionID + 1,
-        selectedOption: ''
+        selectedOption: '',
+        correctAnswer: null
       });
     } else {
       this.setState({
         questionID: 0,
-        selectedOption: ''
+        selectedOption: '',
+        correctAnswer: null
       });
     }
   }
 
   render() {
     return ( 
-      <div >
-        <br />
-        <h1 > 
+      <div className="quiz-page">
+        <h1 className="quiz-title"> 
           {JSON.stringify(data[this.state.questionID].question)} 
         </h1> 
+
         <img 
+          className="quiz-image"
           src = {this.imageURL()} 
           alt = {data[this.state.questionID].altText}
-          style={{"maxWidth":"80%","maxHeight":"20%"}}
+          style={{"maxHeight":"400px", "maxWidth":"1000px"}}
         />
+
         <hr />
-        <form
-          onSubmit={this.handleFormSubmit} >
-        {data[this.state.questionID].choices.map((item, index) => {
-          return(
-          <div className='radio' key={index}>
-            <label>
-              <input 
-                type='radio' 
-                key={index}
-                value={`option${index}`}
-                name={item}
-                checked={this.state.selectedOption===`option${index}`}
-                onChange={this.handleOptionChange} />
-              {data[this.state.questionID].choices[index]}
-            </label>
-          </div>
-          )
-        })}
-        <br />
-        <button className='submit button' type='submit'>Check Answer</button>
+
+        <form 
+          className="quiz-form"  
+          onSubmit={this.handleFormSubmit} 
+        >
+          {data[this.state.questionID].choices.map((item, index) => {
+            return(
+              <div className='radio' key={index} style={{"display":"inline", "margin-left":"40px"}}>
+                <label>
+                  <input 
+                    type='radio' 
+                    key={index}
+                    value={`option${index}`}
+                    name={item}
+                    checked={this.state.selectedOption===`option${index}`}
+                    onChange={this.handleOptionChange} 
+                    style={{"margin":"5px"}}
+                    />
+                  {data[this.state.questionID].choices[index]}
+                </label>
+              </div>
+              )
+            })}
+            <br />
+          <button 
+            className='submit button' 
+            type='submit'
+            style={{"margin":"5px"}}
+          >
+            Check Answer
+          </button>
+
+          <button 
+            className='nextQuestion' 
+            onClick={this.handleNextButton} 
+            disabled={this.state.correctAnswer===null || this.state.correctAnswer===false ? true : false}
+          >
+            Next Question
+          </button>
+
         </form>
-        <br />
-        <div>
-          <button className='nextQuestion' onClick={this.handleNextButton} >Next Question</button>
-        </div>
       </div>
     );
   }

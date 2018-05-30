@@ -2,7 +2,7 @@
   "question": "What is this a picture of?",
   "image": "coffee",
   "altText": "steaming coffee",
-  "choices": ["Cookies and Coffee", "Donuts and Cider"],
+  "choices": ["Cookies and Coffee", "Donuts and Cider", "Pumpkins"],
   "answer": "Cookies and Coffee",
   "response": "I just love cookies and a warm cup of coffee!"
 },
@@ -10,14 +10,14 @@
   "question": "What is this a picture of?",
   "image": "kittensAndPuppies",
   "altText": "kitten and puppy",
-  "choices": ["Kitten and Puppy", "Pointy eared fluff ball and floppy eared fuzz bucket"],
+  "choices": ["Kitten and Puppy", "Fluff ball and Fuzz bucket"],
   "answer": "Kitten and Puppy",
   "response": "Aren't they just so cute!"
 },{
-  "question": "Which is on the right?",
-  "image": "kittensAndPuppies",
-  "altText": "kitten and puppy",
-  "choices": ["Kitten", "Puppy"],
-  "answer": "Puppy",
-  "response": "Cats Rule!"
+  "question": "Which animal is on the left?",
+  "image": "tRex",
+  "altText": "t-rex and stegosarurs",
+  "choices": ["Kitten", "Puppy", "Stegosaurus", "T-Rex"],
+  "answer": "T-Rex",
+  "response": "I've got a big head and little arms!"
 }]

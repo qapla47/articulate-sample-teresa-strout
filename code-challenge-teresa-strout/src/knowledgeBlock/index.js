@@ -23,33 +23,41 @@ export default class KnowledgeBlock extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Nav tabs>
-          <NavItem>
+      <div style={{"margin":"5px"}}>
+        <Nav tabs className="knowledge-tabs navigation" >
+          <NavItem className="knowledge-tabs item">
             <NavLink
-              className={classnames({ active: this.state.activeTab === '1' })}
-              onClick={() => { this.toggle('1'); }}
+            className={classnames({ active: this.state.activeTab === '1' })}
+            onClick={() => { this.toggle('1'); }}
             >
-              Ugly but Functional
+            Prettier
             </NavLink>
           </NavItem>
-          <NavItem>
+
+          <NavItem className="knowledge-tabs item">
             <NavLink
               className={classnames({ active: this.state.activeTab === '2' })}
               onClick={() => { this.toggle('2'); }}
             >
-              Prettier
+              Ugly but Functional
             </NavLink>
           </NavItem>
+
         </Nav>
-        <TabContent activeTab={this.state.activeTab}>
+
+        <TabContent 
+          activeTab={this.state.activeTab}
+          className="knowledge-tabs content"
+          >
           <TabPane tabId="1">
-            <UglyFunctional />
-          </TabPane>
-          <TabPane tabId="2">
             <RSQuiz />
           </TabPane>
+
+          <TabPane tabId="2">
+            <UglyFunctional />
+          </TabPane>
         </TabContent>
+
       </div>
     );
   }
